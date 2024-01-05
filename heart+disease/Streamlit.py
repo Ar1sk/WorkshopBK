@@ -6,8 +6,13 @@ from sklearn.metrics import accuracy_score
 import streamlit as st
 import time
 import pickle
+import os
 
-with open("https://github.com/Ar1sk/WorkshopBK/blob/main/heart+disease/hungarian.data", encoding='Latin1') as file:
+path = os.path.dirname(__file__)
+data = path+'/hungariant.data'
+model = path+'/modelXGB.pkl'
+
+with open(data, encoding='Latin1') as file:
   lines = [line.strip() for line in file]
 
 data = itertools.takewhile(
@@ -86,7 +91,7 @@ y = df_clean['target']
 smote = SMOTE(random_state=42)
 X, y = smote.fit_resample(X, y)
 
-model = pickle.load(open("https://github.com/Ar1sk/WorkshopBK/blob/main/heart+disease/modelXGB.pkl", 'rb'))
+model = pickle.load(open(model, 'rb'))
 
 y_pred = model.predict(X)
 accuracy = accuracy_score(y, y_pred)
