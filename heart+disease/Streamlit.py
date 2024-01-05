@@ -9,7 +9,7 @@ import pickle
 import os
 
 path = os.path.dirname(__file__)
-data = path+'/hungariant.data'
+data = path+'/hungarian.data'
 model = path+'/modelXGB.pkl'
 
 with open(data, encoding='Latin1') as file:
