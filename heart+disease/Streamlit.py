@@ -11,6 +11,7 @@ import os
 here = os.path.dirname(__file__)
 print(here)
 my_file = here+'/hungarian.data'
+my_model = here+'/modelXGB.pkl'
 
 with open(my_file, encoding='Latin1') as file:
   lines = [line.strip() for line in file]
@@ -91,7 +92,7 @@ y = df_clean['target']
 smote = SMOTE(random_state=42)
 X, y = smote.fit_resample(X, y)
 
-model = pickle.load(open("modelXGB.pkl", 'rb'))
+model = pickle.load(open(my_model, 'rb'))
 
 y_pred = model.predict(X)
 accuracy = accuracy_score(y, y_pred)
