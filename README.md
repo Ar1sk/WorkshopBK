@@ -1,2 +1,0 @@
-# WorkshopBK
-Associate Data Scientist 
