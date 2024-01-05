@@ -9,8 +9,8 @@ import time
 import pickle
 
 path = os.path.dirname(__file__)
-data = path+'hungarian.data'
-model = path+'modelXGB.pkl'
+data = path+'/hungarian.data'
+model = path+'/modelXGB.pkl'
 
 with open(data, encoding='Latin1') as file:
   lines = [line.strip() for line in file]
