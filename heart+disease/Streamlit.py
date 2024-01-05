@@ -1,3 +1,4 @@
+import os
 import itertools
 import pandas as pd
 import numpy as np
@@ -6,6 +7,10 @@ from sklearn.metrics import accuracy_score
 import streamlit as st
 import time
 import pickle
+
+path = os.path.dirname(__file__)
+data = path+'\hungarian.data'
+model = path+'\modelXGB.pkl'
 
 with open("hungarian.data", encoding='Latin1') as file:
   lines = [line.strip() for line in file]
