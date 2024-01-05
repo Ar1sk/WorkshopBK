@@ -6,12 +6,8 @@ from sklearn.metrics import accuracy_score
 import streamlit as st
 import time
 import pickle
-import os
 
-here = os.path.dirname(__file__)
-my_file = here+'/hungarian.data'
-
-with open(my_file, encoding='Latin1') as file:
+with open("https://github.com/Ar1sk/WorkshopBK/blob/main/heart%2Bdisease/hungarian.data", encoding='Latin1') as file:
   lines = [line.strip() for line in file]
 
 data = itertools.takewhile(
